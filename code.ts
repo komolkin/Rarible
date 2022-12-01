@@ -1,5 +1,5 @@
 figma.showUI(__html__);
-figma.ui.resize(360, 218);
+figma.ui.resize(360, 224);
 
 figma.ui.onmessage = (pluginMessage) => {
   const previewComponentSet = figma.root.findOne(
@@ -51,8 +51,16 @@ figma.ui.onmessage = (pluginMessage) => {
         break;
     }
   }
-
-  selectedSize.createInstance();
+  const nodes: SceneNode[] = [];
+  for (let i = 0; i < pluginMessage.amount; i++) {
+    const prev = selectedSize.createInstance();
+    prev.x = i * (prev.width + 16);
+    figma.currentPage.appendChild(prev);
+    nodes.push(prev);
+    figma.currentPage.selection = nodes;
+    figma.viewport.scrollAndZoomIntoView(nodes);
+  }
+  // selectedSize.createInstance();
 
   figma.closePlugin();
 };

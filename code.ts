@@ -60,6 +60,5 @@ figma.ui.onmessage = (pluginMessage) => {
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
   }
-  // selectedSize.createInstance();
   figma.closePlugin();
 };

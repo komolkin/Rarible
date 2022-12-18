@@ -1,5 +1,5 @@
 figma.showUI(__html__);
-figma.ui.resize(360, 224);
+figma.ui.resize(360, 336);
 
 figma.ui.onmessage = (pluginMessage) => {
   const previewComponentSet = figma.root.findOne(
@@ -61,6 +61,5 @@ figma.ui.onmessage = (pluginMessage) => {
     figma.viewport.scrollAndZoomIntoView(nodes);
   }
   // selectedSize.createInstance();
-
   figma.closePlugin();
 };

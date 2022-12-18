@@ -1,5 +1,5 @@
 {
-  "name": "Rarible",
+  "name": "NFT previews generator",
   "id": "1179743535153991955",
   "api": "1.0.0",
   "main": "code.js",
